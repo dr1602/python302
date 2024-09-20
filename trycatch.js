@@ -20,5 +20,10 @@ data.forEach((item) => {
 });
 
 /*
- 
+El número 21 es mayor de edad.
+El número 17 es menor de edad.
+El número 35 es mayor de edad.
+Este elemento no es un número.
+El número 40 es mayor de edad.
+El número 15 es menor de edad.
  */
