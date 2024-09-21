@@ -41,3 +41,39 @@ b. Nodes
 c. LInked Lists
 d. Stacks
 e. Queues
+
+# Elementos de programacion e n Python
+
+a. elementos lexicos
+. if, while, def, etc
+
+b. convenciones
+. variable, constante, nombre_funcion, nombreClase
+
+c. tomar en cuenta
+. sintaxis
+. lietrales
+. operadores
+. import
+. condicionales
+. loops
+
+## estructruras propias
+
+a. listas
+b. tuplas
+c. conjunots (sets)
+d. diccionarios
+
+## funciones
+
+a. declaraciones y llmada
+b. recursivas
+c. anidadas
+d. high order functions
+e. lambdas
+
+## ademas
+
+a. manejo de excepciones y errores
+b. manipulacion de archivos
