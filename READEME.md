@@ -77,3 +77,88 @@ e. lambdas
 
 a. manejo de excepciones y errores
 b. manipulacion de archivos
+
+# Tipos de colecciones
+
+Nos referimos tambien a las estructuras de datos.
+
+## que es una coleccion?
+
+Es un grupo de cero o mas elementos que pueden tratarse como una unidad conceptual.
+
+En la programacion los datos pueden tener distintas representaciones, unos son datos iguales a cero o no cero. Como un numero negativo.
+
+Tambien hay datos como null o non en python, siginifca nada, otro tipo de dato es undefined, cuando no se define que tipo de dato es.
+
+Pueden formar parte o no de una coleccion.
+
+## Tipos de colecciones
+
+a. Dinamicas
+b. Inmutables: no cambiaran su tamano, ni crecer ni reducirse.
+
+### Lineales
+
+a. Ordenadas por posicion
+b. Solo el primer elemento NO tiene predecesor.
+c. Todas tienen un predecesor, excepto primera o la ultima.
+d. si es dinamica esta puede crecer y el ultimo elemento puede tener sucesores
+
+Ejemplos:
+
+a. Fila en el supermercado
+b. Pila de platos
+c. Checklist de tareas
+
+### Jerariquicas
+
+a. Ordenadas como un arbol invertido
+b. Solo el primer elemento no tiene predecesores, pero si tiene sucesores
+c. COn padres e hijos
+d. tiene n sucesores
+
+Ejemplos:
+a. sistema de directorios, no tienen limite excepto el limite en memoria de la computadora.
+b. indices de libros, con capitulos, temas y subtemas, etc.
+
+### Grafos
+
+a. Cada dato puede tener varios predecesores y sucesores
+b. como no son jerarquitcos, tienen veciones
+
+ejemplo:
+
+a. rutas de los vuelos que pueden estar conectados a varios destinos o a ninguno
+
+### Desordenadas
+
+a. No tienen orden particular.
+b. No hay predecesores o sucesores.
+
+Los elementos simplemente estan ahi.
+
+Ejemplo:
+a. Canicas
+b. Premios de loteria cuando estan representados con esferas
+
+### Ordenadas
+
+a. impone un orden con una regla como
+
+item < item+1
+
+que le dara orden
+
+ejemplo:
+a. como un calogo de pintura
+
+### Taxonomia de estructuras de datos.
+
+a. Nos concentraremos en las lineales en este curso.
+
+### El eterno dilema
+
+Al buscar en estructuras de bases de datos, tenemos que balancear entre poco costo de recursos y la velocidad.
+Pero las estructuras de datos, al ser colecciones con caracteristicas especificas no spermiten que bajo ciertas circunstancias tengan un desempeno mayor.
+
+Son herramientas y segun el caso de uso, son las estructuras a usar. veremos cuales son.
