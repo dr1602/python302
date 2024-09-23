@@ -182,3 +182,116 @@ h. Insertar: al principio al final o en una posicion determinada
 i. Remover: al principio al final o en una posicion determinada
 j. Reemplazar: tomar un elemento de la coleccion, eliminarlo y poner otro
 k. Acceder: a uno o todos los elemntos de la coleccion
+
+# Colecciones incorporadas
+
+## Listas
+
+a. Propostio general.
+b. Estructura mas utilizada.
+c. Tamanio dinamico.
+d. De tipo secuencial con un indice.
+e. Ordenable.
+
+```py
+# Formas para construir listas
+
+list1 = list()
+list2 = ['t', 25, 'cat', 3.1416]
+list3 = list[number**2 for number in range(1, 100, 3)]
+
+print(list1)
+print(list2)
+print(list3)
+
+>>> []
+>>> ['t', 25, 'cat', 3.1415]
+>>> [1, 16, 49, 100, 169, 256, 484, 625, 784, 961, 1156, 1369, 1600, 1849, 2116, 2401, 2704, 3025, 3364, 3721, 4096, 4489, 4900, 5329, 5776, 6241, 7225, 7744, 8281,8836, 9409]
+
+
+```
+
+## Tuplas/ Tuples
+
+a. Inmutalbe (no se pueden aniadir o cambiar)
+b. Utiles para datos constantes, como un mapa con coordenadas de sitios arqueologicos, edificios, etc.
+c. Mas rapidas que las listas
+d. Tipo secuencial
+
+```py
+
+# Formas para construir tuplas
+
+tuple1 = ()
+tuple2 = (1274, 1275, 1276)
+typle3 = 'mulan', 'pucca', 'percy'
+
+print(tuple1)
+print(tuple2)
+print(tuple3)
+
+>>> ()
+>>> (1274, 1275, 1276)
+>>> ('mulan', 'pucca', 'percy')
+
+```
+
+## Conjuntos/ Sets
+
+a. Almacenan objetos no-duplciaods.
+b. De acceso rapido.
+c. Aceptan operaciones logicas.
+d. Son desordenados.
+
+Como una receta de cocina con ingredientes que no se duplican.
+
+```py
+# formas para construir conjuntos
+
+set1 = {3, 5, 9, 3, 9}
+set2 = set()
+numbers = [1, 2, 3, 4, 5, 6, 1, 2]
+set3 = set(numbers)
+
+print(set1)
+print(set2)
+print(set3)
+
+>>> {9, 3, 5}
+>>> set()
+>>> {1, 2, 3, 4, 5, 6}
+
+```
+
+## Diccionarios/ Diccionaries
+
+a. Pares de llave/valor.
+b. Arrays asociativos (hash maps).
+c. Son ordenados.
+
+Son rapidos para realizar consultas.
+
+```py
+
+cats1 = {
+    'mulan': 2,
+    'pucca': 1.2,
+    'percy': 4,
+}
+
+cats2 = dict([('mulan', 2),('pucca', 1.2),('percy', 4)])
+cats3 = dict(mulan=2, pucca=1.2, percy=4)
+
+print(cats1)
+print(cats2)
+print(cats3)
+
+>>> { 'mulan': 2, 'pucca': 1.2, 'percy': 4}
+>>> { 'mulan': 2, 'pucca': 1.2, 'percy': 4}
+>>> { 'mulan': 2, 'pucca': 1.2, 'percy': 4}
+
+```
+
+### ¿En qué casos usuarías cada estrcutura?
+
+### ¿Qué tipo de información guardarías?
