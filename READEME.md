@@ -162,3 +162,23 @@ Al buscar en estructuras de bases de datos, tenemos que balancear entre poco cos
 Pero las estructuras de datos, al ser colecciones con caracteristicas especificas no spermiten que bajo ciertas circunstancias tengan un desempeno mayor.
 
 Son herramientas y segun el caso de uso, son las estructuras a usar. veremos cuales son.
+
+# Stack vs Queue
+
+Habla sobre la eficiencia que se puede obtener en memoria y velocidad cuando se utilizan las estructuras de datos aporpiadas, en este caso el Queue puede ser mas rapidas para operaciones como agregar y eleimnar que los stacks.
+
+# Operaciones esenciales en colecciones
+
+## Operaciones
+
+a. Tamanio
+b. Pertenencia: si se encuentra dentro de una coleccion
+c. Recorrido: para recorrer la coleccion, sobre cada uno de sus elementos
+d. String: convertir a string
+e. Igualdad: saber si la coleccion es igual a otra o alguno de sus elementos.
+f. Concatenacion
+g. Conversion de tipo: de un tipo de dato a otro
+h. Insertar: al principio al final o en una posicion determinada
+i. Remover: al principio al final o en una posicion determinada
+j. Reemplazar: tomar un elemento de la coleccion, eliminarlo y poner otro
+k. Acceder: a uno o todos los elemntos de la coleccion
