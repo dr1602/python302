@@ -292,6 +292,67 @@ print(cats3)
 
 ```
 
-### ¿En qué casos usuarías cada estrcutura?
+### ¿En qué casos usuarías cada estrcutura? ¿Qué tipo de información guardarías?
 
-### ¿Qué tipo de información guardarías?
+a. Listas: para una tienda en linea, para poder tener un control de los distintos tipos de producto, meteria listas que contengan strings para el nombre, codigo de barras, numeros para los precios y boleanos para saber si esta disponible o no el producto.
+
+b. Tuplas: para la misma tienda en linea, para clasificar en secciones los diferentes productos, donde se definen de forma anticipada los tipos de productos que se venderan como estrategia de negocio y se supone que no cambiaran en el corto ni mediano plazo, en este caso serian puros strings y las categorias podrian ser, para una tienda en linea de productos deportivos: calzado, accesorios, conjuntos de ropa, pants, jerseys, shorts, etc.
+
+c. Conjuntos o sets: para el carrito de compras en la tienda de ropa deportiva en el que en la mayor parte de los casos solo compraras un tipo de producto en especifico, quieres evitar duplicados al momento de hacer la transaccion de venta, y este tipo de estructuras puede ser un buen candado para evitar compras duplicadas, podrias ser por sku para ventas a individuos, en el caso de ventas a otras empresas o asociaciones deportivas, se podria vender con skus repetidos.
+
+d. Diccionarios: para la tienda de articulos deportivos, lo usaria para guardar la informacion de cada usuario, como su nombre (strings), direccion (strings), edad(number), etc.
+
+# Arrays
+
+Primera estructura de datos lineales que conoceremos
+
+## Que es una estructura de datos?
+
+Representacion interna de una coleccion de informacion
+
+## Conceptos claves
+
+a. Elementos: valor que se almacena en cada una de las posiciones del array.
+b. Indice: referencia a la posicion del elemento.
+
+## Comportamiento de la Memoria
+
+### Memory slot
+
+Se puede visualizar como una rejilla donde de se almacenan datos, conforme se coloque informacion, estas casillas se iran ocupando.
+
+### Como se guardan los datos
+
+Se guardan de forma secuencial, pero cuando se elimina un dato, se crea un hueco, y los nuevos inputs de inforamcion que se quieran agregar, necesitaran acomodarse en espacios consecutivos disponibles de acuerdo al tamanio de su informacion
+
+Los arrays guardan informacion de forma consecutiva y tiene restricciones.
+No se puede guardar mas inforamcion que la permite un array.
+
+Array tiene una capacidad que es el numero de elementos que puede almacenear.
+
+Hay distintos tipos de array
+a. Lineal
+b. Dos dimensiones
+c. Tres dimensiones
+
+En python no se recomienda programar con estructuras de datos con mas de 2 dimensiones.
+
+### Los arrays son listas?
+
+Si, los arrays son un tipo de listas, pero las listas no son son arrays. Tienen ciertas restricciones:
+
+No pueden:
+a. agregar posiciones.
+b. remover posiciones
+c. modificar su tamanio
+d. su capacidad se define al crearese.
+
+Un caso de uso son los video juegos como los mapas de bits, para que la imagen no sea mas grande que la definida, o para los menus de opciones donde no habra nuevas opciones.
+
+### Modulo array
+
+Existe un modulo predefinido de arrays en python pero no es tan versatil porque:
+a. Solo almacena numeros y caracteres
+c. Badado en listas. No nos permite almacenar distintos tipos de datos.
+
+# Crear un array
