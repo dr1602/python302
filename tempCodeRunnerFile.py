@@ -1,12 +1,37 @@
-def pyramid_sum(lower, upper, margin=0):
-    blanks = " " * margin
-    print(blanks, lower)
-    if lower > upper:
-        print(blanks, 0)
-        return 0
-    else:
-        result = lower + pyramid_sum(lower + 1, upper, margin + 4)
-        print(blanks, result)
-        return result
+class Array:
+    def __init__(self, capacity, fill_value=None):
+        self.items = list()
+        for i in range(capacity):
+            self.items.append(fill_value)
+            
+    def __len__(self):
+        return len(self.items)
     
-pyramid_sum(1, 4)
+    def __str__(self):
+        return str(self.items)
+    
+    def __iter__(self):
+        return iter(self.items)
+    
+    def __getitem__(self, index):
+        return self.items[index]
+    
+    def __setitem__(self, index, new_item):
+        self.items[index] = new_item
+
+menu = Array(5)
+
+for i in range(len(menu)):
+    menu[i] = i + 1
+
+print(menu.__len__())
+
+print(menu.__str__())
+
+print(menu.__iter__())
+
+print(menu.__getitem__(2))
+
+print(menu.__setitem__(2, 100))
+
+print(menu)

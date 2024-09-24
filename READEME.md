@@ -356,3 +356,11 @@ a. Solo almacena numeros y caracteres
 c. Badado en listas. No nos permite almacenar distintos tipos de datos.
 
 # Crear un array
+
+Creemos nustro propio array porque al definir sus metodos, entenderemos mejor como funciona. Un array puede tener metodos para: 
+a. Crearse
+b. Longitud
+c. Representacion string
+d. Pertenencia
+e. Indice
+f. Reemplazo
