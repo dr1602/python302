@@ -1,37 +1,31 @@
-class Array:
-    def __init__(self, capacity, fill_value=None):
-        self.items = list()
-        for i in range(capacity):
-            self.items.append(fill_value)
+from array import Array
+
+class Grid():
+    def __ini__(self, rows, columns, fill_value=None):
+        self.data = Array(rows)
+        for row in range(rows):
+            self.data = Array(columns, fill_value)
             
-    def __len__(self):
-        return len(self.items)
-    
-    def __str__(self):
-        return str(self.items)
-    
-    def __iter__(self):
-        return iter(self.items)
-    
-    def __getitem__(self, index):
-        return self.items[index]
-    
-    def __setitem__(self, index, new_item):
-        self.items[index] = new_item
-
-menu = Array(5)
-
-for i in range(len(menu)):
-    menu[i] = i + 1
-
-print(menu.__len__())
-
-print(menu.__str__())
-
-print(menu.__iter__())
-
-print(menu.__getitem__(2))
-
-print(menu.__setitem__(2, 100))
-
-print(menu)
+        def get_height(self):
+            return len(self.data)
+        
+        def get_width(self):
+            return len(self.data[0])
+        
+        def __getitem__(self, index):
+            return self.data[index]
+        
+        def __str__(self):
+            result = ''
+            
+            for row in range(self.get_height()):
+                for col in range(self.get_width()):
+                    result += str(self.data[row][col]) + ''
+                    
+                    result += '\n'
+                    
+                return str(result)
+            
+if __name__ == '__main__':
+    matrix = Grid(3, 3);
+    print(matrix)

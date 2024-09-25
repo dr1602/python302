@@ -357,10 +357,41 @@ c. Badado en listas. No nos permite almacenar distintos tipos de datos.
 
 # Crear un array
 
-Creemos nustro propio array porque al definir sus metodos, entenderemos mejor como funciona. Un array puede tener metodos para: 
+Creemos nustro propio array porque al definir sus metodos, entenderemos mejor como funciona. Un array puede tener metodos para:
 a. Crearse
 b. Longitud
 c. Representacion string
 d. Pertenencia
 e. Indice
 f. Reemplazo
+
+# Arrays de dos dimensiones
+
+Otros nombres:
+a. Bi-dimensional array
+b. Two-dimensional array
+c. Grid
+d. Grid
+e. Rejilla
+f. Malla
+g. Tabla
+
+## Estructura
+
+Su estructura es una tabla con filas y columnas que en su interseccion tendra elementos, en un array cada elemento puede tener un valor diferente. Cuando en una lista anidamos otra mas, es un ejemplo de este tipo de estructuras.
+
+## recapitulacio
+
+a. creamos una clase grid a partir de una clase array
+b. los valores por defecto eran none pero los cambiamos
+c. hicimos referencia a cada uno de los datos en las filas y en las columnas con loops anidados.
+
+## que pasa con los arrays de 3 dimensiones
+
+Son arrays, dentro de arrays, dentro de arrays.
+
+### Reto
+
+a. Crear una clase 'Grid' - Incorporarle un metodo para cambiar sus valores, para que no sean non, como numeros aleatorios, secuenciales
+b. Incorpora un metodo para poblar sus slots
+c. Crea una clase 'Cube': array de 3 dimensiones
