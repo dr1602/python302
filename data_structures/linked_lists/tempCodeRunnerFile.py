@@ -1,5 +1,5 @@
 '''
-Insertar al Inicio de la Lista
+Eliminar un Nodo por Valor
 '''
 
 class Node:
@@ -11,33 +11,56 @@ class LinkedList:
     def __init__(self):
         self.head = None
         
-    def prepend(self, data):
+    def append(self, data):
         new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
+        if not self.head:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+            
+    def delete(self, key):
+        current = self.head
+        if current and current.data == key:
+            self.head = current.next
+            current = None
+            return
+        
+        prev = None
+        while current and current.data != key:
+            prev = current
+            current = current.next
+            
+        if current is None:
+            return
+        
+        prev.next = current.next
+        current = None
         
     def display(self):
         current = self.head
-        
         while current:
             print(current.data, end=' -> ')
             current = current.next
         print('None')
-        
+            
 if __name__ == '__main__':
-    from ejemplo2 import Node, LinkedList
+    from ejemplo3 import LinkedList
     
     ll = LinkedList()
-    ll.prepend(3)
-    ll.prepend(2)
-    ll.prepend(1)
-    ll.prepend(0)
+    ll.append(1)
+    ll.append(2)
+    ll.append(3)
+    ll.append(4)
     ll.display()
     
-    la = LinkedList()
-    la.prepend(0)
-    la.prepend(1)
-    la.prepend(2)
-    la.prepend(3)
-    la.prepend(ll)
-    la.display()
+    ll.delete(4)
+    ll.display()
+    
+    ll.delete(2)
+    ll.display()
+    
+    ll.delete(3)
+    ll.display()
