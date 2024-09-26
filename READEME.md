@@ -395,3 +395,56 @@ Son arrays, dentro de arrays, dentro de arrays.
 a. Crear una clase 'Grid' - Incorporarle un metodo para cambiar sus valores, para que no sean non, como numeros aleatorios, secuenciales
 b. Incorpora un metodo para poblar sus slots
 c. Crea una clase 'Cube': array de 3 dimensiones
+
+# Nodos y singly linked lists
+
+## Linked structures
+
+a. Consiste de nodos conectados unos a otros.
+b. Los mas comunes son sencillos o dobles.
+c. No se accede por indice, sino por recorrido.
+
+Su estructura les da ciertas ventajas y desventajas
+
+## Conceptos clave
+
+a. Data: valor almacenado en los nodos.
+b. Next: referencia al siguiente nodo.
+c. Previous: referencia al nodo anterior.
+
+Los valores no son secuenciales, no necesariamente son: 1, 2, 3, dependera del contenido del nodo.
+
+d. Head: referencia al primer nodo en la lista.
+e. Tail: referencia al ultimo nodo en la lista.
+
+## como se guardan los linked list?
+
+Los datos en los nodos estan repartidos en la memoria, no son contiguos, a difrencia de los arrays. Para hacer referencia a otro dato, usamos los nodos que se van a concectar a otro dato, que esta en otro espacio en la memoria.
+
+Con esto podemos saltar entre espacios de memoria, mas rapido, que usando una lista
+
+## implementacion o como podemos implementarlas
+
+a. Implementar otras estructuras
+b. Optimizacion
+
+Los nodos nos sirven para crear estructuras mas complejas, como los stacks o queues, y podemos optimizar nuestro codigo usando linked list cuando las opciones no son muchas.
+
+## Singly linked structures
+
+[head] -> [D1| ] -> [dato|referencia] -> [D3| ] -> [D4|none]
+
+Tambien pueden ser double linked lists o structures, tienen un comportamiento diferente donde los nodos tienen referencia al nodo siguiente y al anterior
+
+## casos de uso
+
+a. Hacer/ rehacer operaciones en un editor de texto
+b. Historial de un navegador
+
+Hay que tener creatividad y criterio para crearlas porque si una lista crece demasiado, sera mas dificil de gestionar.
+
+```
+https://platzi.com/home/clases/2299-estructuras-datos-python/37651-nodos-y-singly-linked-list/
+```
+
+# Crear nodos
