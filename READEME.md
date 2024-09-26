@@ -457,3 +457,6 @@ Esto va a aser muy util si tenemos informacion dispersa en memoria y no podemos 
 a. Crearemos una clase Node.
 b. Referimos valores.
 c. Unimos nodos iterando.
+
+# Crear singly linked list
+
