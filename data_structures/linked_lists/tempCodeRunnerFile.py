@@ -1,70 +1,42 @@
 '''
-Ejemplo 8: Eliminar en un indice especifico
+Ejemplo 10: Creacion de una cadena de nodos
 '''
 
 class Node:
-    def __init__(self, data):
+    def __init__(self, data, next=None):
+        # El argumento 'next' se usa para apuntar al siguiente nodo, por defecto es None
         self.data = data
-        self.next = None
+        self.next = next
 
-class SinglyLinkedList:
-    def __init__(self):
-        self.head = None
-        
-    def append(self, data):
-        new_node = Node(data)
-        
-        if self.head is None:
-            self.head = new_node
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = new_node
-            
-    def delete_at_index(self,index):
-        current = self.head
-        if index == 0:
-            self.head = current.next
-            current = None
-            return
-        
-        count = 0
-        previous = None
-        
-        while current and count < index:
-            previous = current
-            current = current.next
-            count += 1
-            
-        if current is None:
-            return # Si el indices es mayor que la longitud, no hace nada
-        
-        previous.next = current.next
-        current = None
-        
-    def display(self):
-        current = self.head
-        
-        while current:
-            print(current.data, end=' -> ')
-            current = current.next
-            
-        print('None')
-        
 if __name__ == '__main__':
-    from ejemplo8 import SinglyLinkedList
+    # Creamos nodos independientes
+    node_1 = Node('Node 1') # Primer nodo, no apunta a ningun otro (next=None por defecto)
     
-    llist = SinglyLinkedList()
-    llist.append(5)
-    llist.append(10)
-    llist.append(15)
-    llist.append(20)
-    llist.append(25)
-    llist.append(30)
+    '''
+    Node 1
+    '''
     
-    llist.delete_at_index(3)
-    llist.display()
+    node_2 = Node('Node 2') # Segundo nodo, sin apuntar a otro
     
-    llist.delete_at_index(0)
-    llist.display()
+    '''
+    Node 2
+    '''
+    
+    # Enlazamos los nodos manualmente
+    node_1.next = node_2 # El nodo 1 ahora apunta al nodo 2
+    
+    # Imprimimos el dato del nodo 1
+    print(node_1.data) # Salida: 'Node 1'
+    
+    '''
+    Node 1
+    '''
+    
+    # Verificamos a que nodo apunta node_1
+    print(node_1.next.data) # Salida: 'Node 2', ya que node_1.next apunta a node_2
+    
+    # Creamos un tercer nodo que apunta al nodo 1
+    node_3 = Node(3, node_1)
+    
+    # Ahora, node_# apunta a node_1, que a su vez apunta a node_2
+    print(node_3.next.data) # Salida: 'Node 1', ya que node_3.next apunta a node_1
