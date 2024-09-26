@@ -23,21 +23,27 @@ class LinkedList:
             
     def delete(self, key):
         current = self.head
-        if current and current.data == key:
-            self.head = current.next
-            current = None
+        
+        # Si el nodo a eliminar es el primero (head)
+        if current is not None and current.data == key:
+            self.head = current.next # Cambiar el head
+            current = None # Liberar memoria
             return
         
         prev = None
-        while current and current.data != key:
+        
+        # Buscar el nodo a eliminar
+        while current is not None and current.data != key:
             prev = current
             current = current.next
-            
+         
+        # Si no encontro el nodo   
         if current is None:
             return
         
+        # Desplazar el nodo
         prev.next = current.next
-        current = None
+        current = None # Liberar memoria
         
     def display(self):
         current = self.head

@@ -25,7 +25,7 @@ class LinkedList:
         count = 0
         current = self.head
         while current:
-            count += 1
+            count += 1 # Incrementar el contador por cada nodo
             current = current.next
         return count
     

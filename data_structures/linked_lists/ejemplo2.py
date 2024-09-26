@@ -12,9 +12,9 @@ class LinkedList:
         self.head = None
         
     def prepend(self, data):
-        new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
+        new_node = Node(data) # Crear un nuevo nodo
+        new_node.next = self.head # El nuevo nodo apunta al antiguo head
+        self.head = new_node # Cambiar el head al nuevo nodo
         
     def display(self):
         current = self.head

@@ -4,26 +4,26 @@ Ejemplo 1: Implementacion basica de una lista enlazada simple
 
 class Node:
     def __init__(self, data):
-        self.data = data
-        self.next = None
+        self.data = data # Nodo contiene datos
+        self.next = None # Apunta al siguiente nodo,  incialmente es None
         
 class LinkedList:
     def __init__(self):
-        self.head = None
+        self.head = None # Inicialmente, la lista esta vacia (head es None)
         
     def append(self, data):
-        new_node = Node(data)
+        new_node = Node(data) # Crear un nuevo nodo con los datos proporcionados
         if not self.head:
-            self.head = new_node
+            self.head = new_node # Si la lista esta vacia, el nuevo nodo es el primero
         else:
-            current = self.head
+            current = self.head # itera hasta el ultimo nodo
             while current.next:
                 current = current.next
-            current.next = new_node
+            current.next = new_node # Enlazar el ultimo nodo con el nuevo nodo.
             
     def display(self):
         current = self.head
-        while current:
+        while current: # Iterar y mostrar cada nodo
             print(current.data, end=" -> ")
             current = current.next
         print('None')
