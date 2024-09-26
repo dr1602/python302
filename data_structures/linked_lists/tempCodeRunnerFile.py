@@ -1,5 +1,5 @@
 '''
-Ejemplo 1: Implementacion basica de una lista enlazada simple
+Insertar al Inicio de la Lista
 '''
 
 class Node:
@@ -11,40 +11,33 @@ class LinkedList:
     def __init__(self):
         self.head = None
         
-    def append(self, data):
+    def prepend(self, data):
         new_node = Node(data)
-        if not self.head:
-            self.head = new_node
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = new_node
-            
+        new_node.next = self.head
+        self.head = new_node
+        
     def display(self):
         current = self.head
+        
         while current:
-            print(current.data, end=" -> ")
+            print(current.data, end=' -> ')
             current = current.next
         print('None')
         
 if __name__ == '__main__':
-    from ejemplo1 import Node, LinkedList
+    from ejemplo2 import Node, LinkedList
     
     ll = LinkedList()
-    ll.append(1)
-    ll.append(2)
-    ll.append(3)
+    ll.prepend(3)
+    ll.prepend(2)
+    ll.prepend(1)
+    ll.prepend(0)
     ll.display()
     
-    '''
-    1 -> 2 -> 3 -> None
-    '''
-    
     la = LinkedList()
-    la.append(4)
-    la.append(3)
-    la.append(2)
-    la.append(1)
-    la.append(ll)
+    la.prepend(0)
+    la.prepend(1)
+    la.prepend(2)
+    la.prepend(3)
+    la.prepend(ll)
     la.display()
