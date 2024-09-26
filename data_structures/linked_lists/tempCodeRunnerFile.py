@@ -1,38 +1,51 @@
 '''
-Ejemplo 7: Insertar en un indice especifico
+Ejemplo 8: Eliminar en un indice especifico
 '''
 
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-    
+
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
         
-    def insert_at_index(self, data, index):
+    def append(self, data):
         new_node = Node(data)
         
-        if index == 0:
-            new_node.next = self.head
+        if self.head is None:
             self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+            
+    def delete_at_index(self,index):
+        current = self.head
+        if index == 0:
+            self.head = current.next
+            current = None
             return
         
-        current = self.head
         count = 0
-        while current and count < index - 1:
-            count += 1
+        previous = None
+        
+        while current and count < index:
+            previous = current
             current = current.next
+            count += 1
             
         if current is None:
-            return # Si el indice es mayo que la longitud, no hace nada
+            return # Si el indices es mayor que la longitud, no hace nada
         
-        new_node.next = current.next
-        current.next = new_node
+        previous.next = current.next
+        current = None
         
     def display(self):
         current = self.head
+        
         while current:
             print(current.data, end=' -> ')
             current = current.next
@@ -40,14 +53,18 @@ class SinglyLinkedList:
         print('None')
         
 if __name__ == '__main__':
-    from ejemplo7 import SinglyLinkedList
+    from ejemplo8 import SinglyLinkedList
     
     llist = SinglyLinkedList()
-    llist.insert_at_index(10, 0)
-    llist.insert_at_index(20, 1)
-    llist.insert_at_index(15, 1)
+    llist.append(5)
+    llist.append(10)
+    llist.append(15)
+    llist.append(20)
+    llist.append(25)
+    llist.append(30)
+    
+    llist.delete_at_index(3)
     llist.display()
     
-    
-    llist.insert_at_index(32, 0)
+    llist.delete_at_index(0)
     llist.display()
