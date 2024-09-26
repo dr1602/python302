@@ -1,12 +1,12 @@
 '''
-Eliminar un Nodo por Valor
+Ejemplo 4: Encontrar el Tamano de la Lista Enlazada
 '''
 
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-        
+    
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -21,46 +21,48 @@ class LinkedList:
                 current = current.next
             current.next = new_node
             
-    def delete(self, key):
+    def size(self):
+        count = 0
         current = self.head
-        if current and current.data == key:
-            self.head = current.next
-            current = None
-            return
-        
-        prev = None
-        while current and current.data != key:
-            prev = current
+        while current:
+            count += 1
             current = current.next
-            
-        if current is None:
-            return
-        
-        prev.next = current.next
-        current = None
-        
+        return count
+    
     def display(self):
         current = self.head
         while current:
             print(current.data, end=' -> ')
             current = current.next
         print('None')
-            
+        
 if __name__ == '__main__':
-    from ejemplo3 import LinkedList
+    from ejemplo4 import LinkedList
     
     ll = LinkedList()
     ll.append(1)
     ll.append(2)
     ll.append(3)
     ll.append(4)
+    ll.append(5)
+    ll.append(6)
+    
+    print(f'Tamano de la lista es: {ll.size()}')
+    
     ll.display()
     
-    ll.delete(4)
+    '''
+    Tamano de la lista es: 6
+    1 -> 2 -> 3 -> 4 -> 5 -> 6 -> None
+    '''
+    
+    la = LinkedList()
+    la.append('a')
+    la.append('b')
+    la.append('c')
+    la.display()
+    
+    ll.append(la)
     ll.display()
     
-    ll.delete(2)
-    ll.display()
-    
-    ll.delete(3)
-    ll.display()
+    ll.display(la.display())
