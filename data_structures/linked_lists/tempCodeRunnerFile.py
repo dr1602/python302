@@ -1,12 +1,12 @@
 '''
-Ejemplo 4: Encontrar el Tamano de la Lista Enlazada
+Ejemplo 5: Invertir la Lista Enlazada
 '''
 
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-    
+        
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -20,49 +20,43 @@ class LinkedList:
             while current.next:
                 current = current.next
             current.next = new_node
-            
-    def size(self):
-        count = 0
+
+    def reverse(self):
+        prev = None
         current = self.head
         while current:
-            count += 1
-            current = current.next
-        return count
-    
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        self.head = prev
+        
     def display(self):
         current = self.head
         while current:
             print(current.data, end=' -> ')
             current = current.next
         print('None')
-        
+
 if __name__ == '__main__':
-    from ejemplo4 import LinkedList
+    from ejemplo5 import LinkedList
     
     ll = LinkedList()
+    ll.append(0)
     ll.append(1)
     ll.append(2)
     ll.append(3)
-    ll.append(4)
-    ll.append(5)
-    ll.append(6)
-    
-    print(f'Tamano de la lista es: {ll.size()}')
-    
     ll.display()
     
-    '''
-    Tamano de la lista es: 6
-    1 -> 2 -> 3 -> 4 -> 5 -> 6 -> None
-    '''
+    ll.reverse()
+    ll.display()
     
     la = LinkedList()
     la.append('a')
     la.append('b')
     la.append('c')
+    la.append('d')
     la.display()
-    
-    ll.append(la)
-    ll.display()
-    
-    ll.display(la.display())
+
+    la.reverse()
+    la.display()
