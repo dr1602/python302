@@ -448,3 +448,12 @@ https://platzi.com/home/clases/2299-estructuras-datos-python/37651-nodos-y-singl
 ```
 
 # Crear nodos
+
+Te permiten crear estructuras de datos mas complejas, y cada nodo va almacenar un dato, y cada nodo va a puntar a otro nodo.
+Esto va a aser muy util si tenemos informacion dispersa en memoria y no podemos almacenarla toda en el mismo espacio.
+
+## Single linked list con nodos
+
+a. Crearemos una clase Node.
+b. Referimos valores.
+c. Unimos nodos iterando.
