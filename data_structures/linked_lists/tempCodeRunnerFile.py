@@ -1,42 +1,31 @@
 '''
-Ejemplo 10: Construir una lista de nodos con bucle
+Ejemplo 3: Busqueda en una lista enlazada de nodos
 '''
 
-class Node:
+class Node():
     def __init__(self, data, next=None):
-        # Almacena los datos y el puntero al siguiente nodo
-        self.data = data
-        self.next = next
+        self.data = data # El nodo guarda un valor
+        self.next = next # Apunta al siguiente nodo (None por defecto)
         
+def search_node(head, target_value):
+    current = head # Empieza desde el nodo cabeza
+    
+    while current is not None: # Recorre la lista hasta el final
+        if current.data == target_value:
+            return True # Si el valor coincide, retorna True
+        current = current.next # moverse al siguiente nodo
+    return False # Si no encuentra el valor, retorna False
+
 if __name__ == '__main__':
-    head = None # Inicialmente , la lista esta vacia (head es None)
+    # Creamos una pequena lista enlazada mutuamente
+    node_1 = Node(10)
+    node_2 = Node(20, node_1)
+    node_3 = Node(30, node_2)
     
-    # Agregar nodos a la lista en un bucle
-    for i in range(5, 0, -1): # Se crearan nodos con los valores 5, 4, 3, 2, 1
-        head = Node(i, head) # El nuevo nodo apunta al nodo anterior (head)
+    # El nodo cabeza es node_3
+    head = node_3
+    
+    # Buscamos un valor en la lista
+    print(search_node(head, 20)) # Salida: True, ya que el valor esta en la lista 
+    print(search_node(head, 40)) # Salida: False, el valor no esta en la lista
         
-    # Recorre la lista e imprimir los valores
-    current = head
-    
-    while current is not None: # Mientras haya nodos en la lista
-        print(current.data) # Imprime el valor del nodo actual
-        current = current.next # Avanza al siguiente nodo
-        
-### NUEVO EJERCICIO DE EJEMPLO CON LIST COMPREHENSIONS
-        
-    new_head = None
-    
-    # new_head = [Node(i, new_head) for i in range(1,21)]
-    #  basicamente no se puede hacer una estructura de datos de esta naturaleza con listas
-    #   ya que no tiene concepto de "de nodo siguiente"
-    
-    # Construir una nueva lista enlazada usando un bucle convencional
-    for i in range(20, 0, -1): # Construir la lista enlazada con valores del 20 al 0, parando en 1
-        new_head = Node(i, new_head)
-    
-    new_current = new_head
-    
-    # Recorrer e imprimir la nueva lista enlazada
-    while new_current is not None:
-        print(new_current.data)
-        new_current = new_current.next
