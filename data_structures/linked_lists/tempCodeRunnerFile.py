@@ -1,42 +1,42 @@
 '''
-Ejemplo 10: Creacion de una cadena de nodos
+Ejemplo 10: Construir una lista de nodos con bucle
 '''
 
 class Node:
     def __init__(self, data, next=None):
-        # El argumento 'next' se usa para apuntar al siguiente nodo, por defecto es None
+        # Almacena los datos y el puntero al siguiente nodo
         self.data = data
         self.next = next
-
+        
 if __name__ == '__main__':
-    # Creamos nodos independientes
-    node_1 = Node('Node 1') # Primer nodo, no apunta a ningun otro (next=None por defecto)
+    head = None # Inicialmente , la lista esta vacia (head es None)
     
-    '''
-    Node 1
-    '''
+    # Agregar nodos a la lista en un bucle
+    for i in range(5, 0, -1): # Se crearan nodos con los valores 5, 4, 3, 2, 1
+        head = Node(i, head) # El nuevo nodo apunta al nodo anterior (head)
+        
+    # Recorre la lista e imprimir los valores
+    current = head
     
-    node_2 = Node('Node 2') # Segundo nodo, sin apuntar a otro
+    while current is not None: # Mientras haya nodos en la lista
+        print(current.data) # Imprime el valor del nodo actual
+        current = current.next # Avanza al siguiente nodo
+        
+### NUEVO EJERCICIO DE EJEMPLO CON LIST COMPREHENSIONS
+        
+    new_head = None
     
-    '''
-    Node 2
-    '''
+    # new_head = [Node(i, new_head) for i in range(1,21)]
+    #  basicamente no se puede hacer una estructura de datos de esta naturaleza con listas
+    #   ya que no tiene concepto de "de nodo siguiente"
     
-    # Enlazamos los nodos manualmente
-    node_1.next = node_2 # El nodo 1 ahora apunta al nodo 2
+    # Construir una nueva lista enlazada usando un bucle convencional
+    for i in range(20, 0, -1): # Construir la lista enlazada con valores del 20 al 0, parando en 1
+        new_head = Node(i, new_head)
     
-    # Imprimimos el dato del nodo 1
-    print(node_1.data) # Salida: 'Node 1'
+    new_current = new_head
     
-    '''
-    Node 1
-    '''
-    
-    # Verificamos a que nodo apunta node_1
-    print(node_1.next.data) # Salida: 'Node 2', ya que node_1.next apunta a node_2
-    
-    # Creamos un tercer nodo que apunta al nodo 1
-    node_3 = Node(3, node_1)
-    
-    # Ahora, node_# apunta a node_1, que a su vez apunta a node_2
-    print(node_3.next.data) # Salida: 'Node 1', ya que node_3.next apunta a node_1
+    # Recorrer e imprimir la nueva lista enlazada
+    while new_current is not None:
+        print(new_current.data)
+        new_current = new_current.next
