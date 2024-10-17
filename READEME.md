@@ -460,3 +460,117 @@ c. Unimos nodos iterando.
 
 # Crear singly linked list
 
+Recuerda intentar referencias cruzadas y complejas, puede ser complejo para el uso de datos.
+Es mejor explicito que implicito al usar y hacer nodos, hacia donde apuntan y etc.
+
+Una forma de solucionar un posible codigo spagheti son los **single linked lists**
+
+* **Nodos Simples con referencias a otros nodos**
+
+```py
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+# Creando nodos
+node1 = Node(10)
+node2 = Node(20)
+node3 = Node(30)
+
+# Enlazando nodos
+node1.next = node2
+node2.next = node3
+
+# En este ejemplo basico, cada nodo tien un atributo next que apunta al siuiente nodo en la lista
+
+```
+
+* **Nodos con Múltiples Referencias**
+
+```py
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.children = [] # Lista para almacenar referencias a hijos
+
+# Creando un árbol
+root = Node('root')
+child1 = Node('child1')
+child2 = Node('child2')
+
+root.children.append(child1)
+root.children.append(child2)
+
+# Aqui, cada nodo puede tener multiples hijos, creando una estructura de arbol
+```
+
+* **Nodos con Referencias Circulares**
+
+```py
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+# Creando un ciclo
+node1 = Node(10)
+node2 = Node(20)
+node3 = Node(30)
+
+node1.next = node2
+node2.next = node3
+node3.next = node1 # Creando el ciclo
+
+# Las referencias circulares osn utiles para representar estructuras ciclicas como grafos dirigidos.
+
+```
+
+### Referencias Cruzadas Complejas y Casos de Uso
+
+* **1. Grafos:** Los grafos son estructuras de datos que consisten en nodos (vértices) y aristas (conexiones). Cada nodo puede tener múltiples aristas que lo conectan a otros nodos, creando una red compleja de referencias cruzadas.
+
+* **2. Árboles:** Los árboles son estructuras de datos jerárquicas donde cada nodo tiene un único padre (excepto la raíz) y puede tener múltiples hijos.
+
+* **3. Listas enlazadas:** Las listas enlazadas son estructuras de datos lineales donde cada elemento (nodo) contiene un enlace al siguiente elemento.
+
+* **4. Redes sociales:** Las redes sociales son un ejemplo de grafos donde los usuarios son nodos y las conexiones entre ellos representan amistades, seguidores, etc.
+
+#### Caso de Uso: Implementacion de un Arbol Genealogico
+
+```py
+
+class Person:
+    def __init__(self, name, parents=None):
+        self.name = name
+        self.parents = parents or []
+        self.children = []
+
+# Creando personas
+person1 = Person('Juan')
+person2 = Person('Maria')
+child1 = Person('Ana', [person2, person1])
+
+# Agregando hijos
+person1.children.append(child1)
+person2.children.append(child1)
+
+# Imprimos la lista
+print(person2)
+print(person1)
+print(child1)
+
+# En este ejemplo, cada persona puede tener multiples padres y multiples hijos, creando un arbol genealogico
+
+```
+
+## Consideraciones importantes
+
+* **Manejo de ciclos:** Las referencias circulares pueden causar problemas si no se manejan correctamente, como bucles infinitos.
+
+* **Eficiencia:** La elección de la estructura de datos adecuada depende de las operaciones que se realizarán con mayor frecuencia.
+
+* **Complejidad:** Las estructuras de datos con muchas referencias cruzadas pueden ser más difíciles de implementar y depurar.
