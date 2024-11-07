@@ -574,3 +574,11 @@ print(child1)
 * **Eficiencia:** La elección de la estructura de datos adecuada depende de las operaciones que se realizarán con mayor frecuencia.
 
 * **Complejidad:** Las estructuras de datos con muchas referencias cruzadas pueden ser más difíciles de implementar y depurar.
+
+# Operaciones en single linked structures
+
+El dilema
+
+* Los arrays usan indices.
+* Los single linked structures no usan indices.
+* El linked structures debemos emularlos
