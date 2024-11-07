@@ -8,19 +8,21 @@ class SinglyLinkedList:
         self.size = 0
 
     def append(self, data):
-        node = Node(data)
 
-        if self.tail == None:
-            self.tail = node
-        else:
-            current = self.tail
+        for i in data:
+            node = Node(i)
 
-            while current.next:
-                current = current.next
+            if self.tail == None:
+                self.tail = node
+            else:
+                current = self.tail
 
-            current.next = node
+                while current.next:
+                    current = current.next
 
-        self.size += 1
+                current.next = node
+
+            self.size += 1
 
     def size(self):
         return str(self.size)
@@ -66,3 +68,14 @@ class SinglyLinkedList:
         self.tail = None
         self.head = None
         self.size = 0
+
+if __name__ == '__main__':
+    words = SinglyLinkedList()
+    words.append(['egg', 'ham', 'jam'])
+
+    for word in words.iter():
+        print(word)
+
+# egg
+# ham
+# jam
