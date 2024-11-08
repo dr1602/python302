@@ -582,3 +582,12 @@ El dilema
 * Los arrays usan indices.
 * Los single linked structures no usan indices.
 * El linked structures debemos emularlos
+
+### Recorrer
+
+Una de las operaciones mas comunes es la de recorrido, ese sera el inidice que nos ayudara
+
+### Variable auxiliar
+
+* Puntero temporal
+* recorre la lista consultando datos
