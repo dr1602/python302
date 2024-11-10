@@ -1,9 +1,6 @@
 from node import Node
 
 head = None
-
-
-
 index = 3
 
 if head is None or index <= 0:
