@@ -591,3 +591,64 @@ Una de las operaciones mas comunes es la de recorrido, ese sera el inidice que n
 
 * Puntero temporal
 * recorre la lista consultando datos
+
+# Operaciones a profundidad
+
+Es importante entender:
+1. Que vamos a hacer
+2. Por que 
+3. Y que herramientas vamos a utilizar
+
+En esta clase veremos que paso de forma conceptual en el codigo anterior.
+
+Que paso en cada una de las operaciones?
+
+* **Variable Prove**: nos ayudaba a saber que habia dentro de cada uno de los nodos, generando una lista de nodos qu elos recorrer y con una condicion se detenia para operar sobre la inforamcion, y ocurre sobre una sola linea, porque es una linked list.
+
+## Ilustracion
+
+*Linked List de ejemplo*
+head -> D1: x -> D2: x -> D3: None
+
+*Inicio del paso 1*: Visita al nodo 1
+head -> D1: x -> D2: x -> D3: None
+probe: (revisa D1)
+
+*Inicio del paso 2*: Visita al nodo 2
+head -> D1: x -> D2: x -> D3: None
+probe: (revisa D2)
+
+*Inicio del paso 2*: Visita al nodo 2
+head -> D1: x -> D2: x -> D3: None
+probe: (revisa D3, como probe es None, el bucle termina)
+
+Esta no es la unica forma de visitar los nodos.
+
+### Metodos que se puede realizar
+
+* **Busqueda**
+
+Node: __init__(self, data, next)
+head: data: 3, next: ->
+count: 3
+probe: data: 2, next: (data: 1, next: None) <- here it search and stop
+target_item: 2
+
+* **Reemplazo**
+
+Node: __init__(self, data, next)
+head: data: 'F', next: ->
+count: 3
+probe: data: 3, next: (data: 1, next: None) <- here it search and stop
+
+* **Insertar al inicio**
+
+Podamos usar el valor de head como referencia
+
+* **Insertar valor al final**
+
+Podemos usar el valor de tail como referencia
+
+* **Insertar un valor en cualquier posicion**
+
+# Circular Linked List
